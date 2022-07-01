@@ -1,6 +1,7 @@
 import Button from './components/Button/Button';
 import React, {useEffect, useState} from "react";
 import Timer from './components/Timer/Timer';
+import styles from './components/Button/Button.module.scss';
 
 
 const App = () => {
@@ -26,9 +27,11 @@ const App = () => {
   return(
     <div>
       <Timer time={time} />
-      <Button action={() => setStart(true)}>START</Button>
-      <Button action={() => setStart(false)}>STOP</Button>
-      <Button action={() => setTime(0)}>RESET</Button>
+        <div className={styles.box}>
+          <Button action={() => setStart(true)}>START</Button>
+          <Button action={() => setStart(false)}>STOP</Button>
+          <Button action={() => setTime(0)}>RESET</Button>
+        </div>
     </div>
   )
 
